@@ -1,8 +1,12 @@
 from fastapi import FastAPI, HTTPException
 import requests
 import os
+from prometheus_fastapi_instrumentator import Instrumentator
 
 app = FastAPI()
+
+# Initialize Instrumentator to collect metrics
+Instrumentator().instrument(app).expose(app)
 
 # OpenWeatherMap API Key (store this in environment variables for security)
 API_KEY = "386b525bed5796c7d5db34e3d5b9da87"
