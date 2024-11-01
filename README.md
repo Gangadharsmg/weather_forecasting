@@ -67,7 +67,7 @@ Make sure the following environment variables are set before deploying:
         spec:
           containers:
           - name: app
-            image: your_docker_image
+            image: weather1.0
             env:
             - name: API_KEY
               valueFrom:
